@@ -17,6 +17,19 @@ from langgraph.store.memory import InMemoryStore
 from langchain_mistralai import ChatMistralAI
 from langchain_openai import ChatOpenAI
 
+#uncomment the code below if model from OpenAI is used
+"""import os, getpass
+
+def _set_env(var: str):
+    if not os.environ.get(var):
+        os.environ[var] = getpass.getpass(f"{var}: ")
+
+_set_env("OPENAI_API_KEY")
+from langchain_openai import ChatOpenAI
+model = ChatOpenAI(model="model-name",temperature=0)
+"""
+
+
 
 import os
 from dotenv import load_dotenv
