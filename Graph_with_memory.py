@@ -529,13 +529,15 @@ graph = builder.compile(checkpointer=within_thread_memory, store=across_thread_m
 # View
 display(Image(graph.get_graph(xray=1).draw_mermaid_png()))
 
-
-config = {"configurable": {"thread_id": "1", "user_id": "Silas"}}
+#Run the graph with thread_id, user_id, and an input
+"""
+config = {"configurable": {"thread_id": "your thread id", "user_id": "your name"}}
 
 # User input to create a profile memory
-input_messages = [HumanMessage(content="I am Silas!!")]
+input_messages = [HumanMessage(content="input message here")]
 
 # Run the graph
 for chunk in graph.stream({"messages": input_messages}, config, stream_mode="values"):
     chunk["messages"][-1].pretty_print()
+"""
 
